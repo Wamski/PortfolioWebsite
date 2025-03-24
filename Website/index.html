@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Portfolio Website</title>
+</head>
+<body>
+<header>
+    <a href="#" class="logo">Wamski</a>
+    <nav>
+        <a href="#home" class="active"> Home</a>
+        <a href="#portf" >Portfolio</a>
+        <a href="https://github.com/Wamski" >Github</a>
+    </nav>
+</header>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('nav a');
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                links.forEach(link => link.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    });
+</script>
+<section class="home" id="home">
+    <div class="home-img">
+        <img src="Assets/JEFF.png" alt="">
+    </div>
+    <div class="home-content">
+        <h1>Hi, I'm <span>Jon</span></h1>
+        <h3 class="typing-text">I'm a <span></span></h3>
+        <p>I am majoring in Computer Science at Wright State University. I am passionate about learning new languages and tools to better develop a solution.</p>
+        <div class="social-icons">
+
+            <a href="https://github.com/Wamski"><i class="fa-brands fa-github"></i></a>
+
+        </div>
+
+    </div>
+</section>
+<section id="portf">
+    <div class="portfolio-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="Assets/Moonlit.png" alt="Moonlit" class="card-img">
+            <div class="card-description">
+                <p>Moonlit is a small souls-like boss room prototype. There is more coming in the near future.</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="Assets/Tinykarts.png" alt="Tinykarts" class="card-img">
+            <div class="card-description">
+                <p>TinyKarts is a time trial racing game. This was my first ever project with Unity and C#.</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="Assets/TODO.png" alt="TODO" class="card-img">
+            <div class="card-description">
+                <p>The TODO app was my introduction to the visual framework Avalonia with C#.</p>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="Assets/Dashboard.png" alt="Swarm" class="card-img">
+            <div class="card-description">
+                <p>Swarm is an ongoing project that I am working on that is meant to connect Swarm's calendar and tasks to your Discord presence.</p>
+            </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+            <img src="Assets/DiscordBot.png" alt="Discord Bot" class="card-img">
+            <div class="card-description">
+                <p>The Discord bot is a bot I've created that is able to perform simple tasks like rolling a dice and pinging. An additional function I have added to it is the ability to start and stop my local Minecraft Server.</p>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+</body>
+</html>
