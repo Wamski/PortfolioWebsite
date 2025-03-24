@@ -13,7 +13,7 @@
     <nav>
         <a href="#home" class="active"> Home</a>
         <a href="#portf" >Portfolio</a>
-        <a href="https://github.com/Wamski" >Github</a>
+        <a href="https://github.com/Wamski" target="_blank" >Github</a>
     </nav>
 </header>
 <script>
@@ -21,7 +21,17 @@
         const links = document.querySelectorAll('nav a');
 
         links.forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (event) => {
+                const targetId = link.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    event.preventDefault(); // Prevent default jump
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
                 links.forEach(link => link.classList.remove('active'));
                 link.classList.add('active');
             });
@@ -38,7 +48,7 @@
         <p>I am majoring in Computer Science at Wright State University. I am passionate about learning new languages and tools to better develop a solution.</p>
         <div class="social-icons">
 
-            <a href="https://github.com/Wamski"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/Wamski" target="_blank"><i class="fa-brands fa-github"></i></a>
 
         </div>
 
